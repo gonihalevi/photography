@@ -17,70 +17,90 @@ layout: default
 
     <!-- Main -->
     <div id="main">
+	<section>
+	<p><h2> internal </h2></p>
+		{% for image in site.static_files %}
+            {% if image.path contains 'fulls' %}
+            {% if image.path contains 'INTERNAL' %}
+            <article class="thumb">
+            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
+                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
+                     data-name="{{ image.name }}"/></a>
+            </article>
+            {% endif %}
+            {% endif %}
+		{endfor}
+    </section>
+    <section>
+    <p><h2> personal </h2></p>
         {% for image in site.static_files %}
-        {% if image.path contains 'fulls' %}
-        {% if image.path contains 'INTERNAL' %}
-        <p><h2> internal </h2></p>
-        <article class="thumb">
+            {% if image.path contains 'fulls' %}
+            {% if image.path contains 'PERSONAL' %}
+            <article class="thumb">
             <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
                      data-name="{{ image.name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
-        </article>
-        {% endif %}
-        {% if image.path contains 'PERSONAL' %}
-        <p><h2> personal </h2></p>
-        <article class="thumb">
+            </article>
+            {% endif %}
+            {% endif %}
+        {endfor}
+    </section>
+    <section>
+    <p><h2> achromatic </h2></p>
+        {% for image in site.static_files %}
+            {% if image.path contains 'fulls' %}
+            {% if image.path contains 'ACHROMATIC' %}
+            <article class="thumb">
             <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
                      data-name="{{ image.name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
-        </article>
-        {% endif %}
-        {% if image.path contains 'ACHROMATIC' %}
-        <p><h2> achromatic </h2></p>
-        <article class="thumb">
+            </article>
+            {% endif %}
+            {% endif %}
+        {endfor}
+    </section>
+    <section>
+    <p><h2> constructed </h2></p>
+        {% for image in site.static_files %}
+            {% if image.path contains 'fulls' %}
+            {% if image.path contains 'CONSTRUCTED' %}
+            <article class="thumb">
             <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
                      data-name="{{ image.name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
-        </article>
-        {% endif %}
-	{% if image.path contains 'VEHICULAR' %}
-	<p><h2> vehicular </h2></p>
-        <article class="thumb">
+            </article>
+            {% endif %}
+            {% endif %}
+        {endfor}
+    </section>
+    <section>
+    <p><h2> natural </h2></p>
+        {% for image in site.static_files %}
+            {% if image.path contains 'fulls' %}
+            {% if image.path contains 'NATURAL' %}
+            <article class="thumb">
             <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
                      data-name="{{ image.name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
-        </article>
-	{% endif %}
-        {% if image.path contains 'CONSTRUCTED' %}
-        <p><h2> constructed </h2></p>
-        <article class="thumb">
+            </article>
+            {% endif %}
+            {% endif %}
+        {endfor}
+    </section>
+    <section>
+    <p><h2> VEHICULAR </h2></p>
+        {% for image in site.static_files %}
+            {% if image.path contains 'fulls' %}
+            {% if image.path contains 'VEHICULAR' %}
+            <article class="thumb">
             <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
                      data-name="{{ image.name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
-        </article>
-        {% endif %}
-        {% if image.path contains 'NATURAL' %}
-        <p><h2> natural </h2></p>
-        <article class="thumb">
-            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
-                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
-                     data-name="{{ image.name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
-        </article>
-        {% endif %}
-        {% endif %}
-        {% endfor %}
+            </article>
+            {% endif %}
+            {% endif %}
+        {endfor}
+    </section>
     </div>
 
     <!-- Footer -->
